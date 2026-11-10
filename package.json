@@ -1,0 +1,16 @@
+{
+  "name": "island-hills-christmas-party-2026-rsvp",
+  "version": "1.0.0",
+  "description": "Event RSVP — Island Hills Christmas Party & Annual Awards Night 2026 (Vercel Functions + Neon Postgres)",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

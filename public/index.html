@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>RSVP &#8212; A Night in Paris &middot; Island Hills Christmas Party 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Midnight Blue, Silver & Ice */
+      --burgundy-black: #060a24;
+      --wine-noir:       #0b1240;
+      --wine-dk:         #121a5a;
+      --wine:            #191970;
+      --wine-bright:     #2a3590;
+
+      --gold-dark:       #4d5f80;
+      --gold-mid:        #8fa3c0;
+      --gold-foil:       #c8d4e6;
+      --gold-light:      #dfe8f5;
+      --gold-bright:     #f4f8fd;
+
+      --gold-grad:       linear-gradient(135deg, #8fa3c0 0%, #eef4fc 45%, #5f7396 100%);
+      --foil-border:     linear-gradient(to bottom, #c8d4e6 0%, rgba(143,163,192,0.2) 50%, #4d5f80 100%);
+
+      --paper-cream:     #fdfcf9;
+      --paper-base:      #f4f2ec;
+      --card-white:      #ffffff;
+
+      --ink-primary:     #0d1445;
+      --ink-muted:       #46506a;
+      --ink-subtle:      #8a92a6;
+
+      --border-fine:     rgba(143,163,192, 0.28);
+      --border-accent:   rgba(25,25,112, 0.12);
+
+      --ease-luxe:       cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--burgundy-black);
+      background-image: 
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(25,25,112, 0.45) 0%, transparent 75%),
+        radial-gradient(circle 800px at 50% 100%, rgba(143,163,192, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 10% 20%, rgba(18,26,90, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(18,26,90, 0.3) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: flex-start; padding: 60px 20px 80px;
+      overflow-x: hidden; position: relative; color: var(--ink-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ================= TWINKLES / SHINE ================= */
+    .twinkle-layer {
+      position: fixed; inset: 0; pointer-events: none;
+      z-index: 1; overflow: hidden;
+      contain: strict; transform: translateZ(0);
+    }
+
+    .twinkle {
+      position: absolute;
+      width: var(--s); height: var(--s);
+      background: radial-gradient(circle, #ffffff 0%, #f4f8fd 30%, #c8d4e6 65%, #8fa3c0 100%);
+      clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+      opacity: 0;
+      will-change: transform, opacity;
+      animation: twinkle var(--t) ease-in-out var(--d) infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+      50%      { opacity: 1; transform: scale(1) rotate(45deg); }
+    }
+
+    .invite-flourish { display: block; width: 190px; max-width: 70%; height: auto; margin: 0 auto 14px;
+      filter: drop-shadow(0 0 8px rgba(200,212,230, 0.35)); }
+    .rule-diamond { width: 12px; height: 12px; flex-shrink: 0; filter: drop-shadow(0 0 5px rgba(200,212,230, 0.6)); }
+
+    .invite-logo {
+      display: block; width: 210px; max-width: 62%; height: auto; margin: 0 auto 22px;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+    }
+    .invite-title { margin: 6px 0 2px; line-height: 0; }
+    .invite-title img {
+      display: block; width: 400px; max-width: 100%; height: auto; margin: 0 auto;
+      filter: drop-shadow(0 0 18px rgba(143, 179, 224, 0.28)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    .invite-eyebrow { line-height: 1.7; text-wrap: balance; }
+
+    .banner-sparkles {
+      position: absolute; inset: 0; z-index: 11;
+      pointer-events: none; overflow: hidden;
+      contain: strict;
+    }
+
+    /* Outer Wrapper */
+    .card-wrap {
+      width: 100%; max-width: 580px;
+      position: relative; z-index: 2;
+      animation: cardEntrance 1.2s var(--ease-luxe) both;
+    }
+
+    @keyframes cardEntrance {
+      0% { opacity: 0; transform: translateY(36px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Ambient Double Rim Border */
+    .card-outer-frame {
+      position: relative;
+      padding: 1px;
+      border-radius: 28px;
+      background: var(--foil-border);
+      box-shadow: 
+        0 35px 90px -20px rgba(0, 0, 0, 0.85),
+        0 0 50px -10px rgba(25,25,112, 0.5);
+    }
+
+    /* Gold glow fades in and out by opacity only (GPU-cheap, no repaint) */
+    .card-outer-frame::before {
+      content: ""; position: absolute; inset: 0; border-radius: inherit;
+      box-shadow: 0 0 70px -8px rgba(143,163,192, 0.35);
+      opacity: 0; pointer-events: none; z-index: -1;
+      will-change: opacity;
+      animation: frameGlow 5s ease-in-out infinite;
+    }
+
+    @keyframes frameGlow {
+      0%, 100% { opacity: 0; }
+      50%      { opacity: 1; }
+    }
+
+    /* ================= ARCH HERO BANNER ================= */
+    .invite-banner {
+      display: flex; align-items: stretch; justify-content: center;
+      min-height: 300px;
+      background: linear-gradient(135deg, var(--burgundy-black) 0%, var(--wine-dk) 50%, var(--burgundy-black) 100%);
+      border-radius: 27px 27px 0 0;
+      overflow: hidden; position: relative; z-index: 3;
+      border-bottom: 1px solid var(--border-fine);
+    }
+
+    /* Text Container - Elevated above any gradients with isolated sharp compositor layer */
+    .invite-text {
+      position: relative; z-index: 10;
+      flex: 1; padding: 46px 28px 42px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    .invite-eyebrow {
+      font-family: 'Cinzel', serif; font-size: 9.5px; font-weight: 600;
+      letter-spacing: 0.38em; text-indent: 0.38em; text-transform: uppercase;
+      color: var(--gold-foil); margin-bottom: 10px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .invite-couple {
+      padding: 4px 0;
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    /* Shimmering couple names */
+    .invite-couple-line {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(42px, 11vw, 58px);
+      line-height: 1.05;
+      /* the shimmer (background-clip:text) paints only inside the box, so give
+         the swashes room without changing the spacing between lines */
+      padding: 0.12em 0.4em 0.22em;
+      margin: -0.12em -0.4em -0.22em;
+      background: linear-gradient(110deg, #ffffff 0%, #ffffff 34%, #eef4fc 44%, #c8d4e6 50%, #eef4fc 56%, #ffffff 66%, #dfe8f5 100%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+      animation: nameShimmer 6s ease-in-out infinite;
+    }
+
+    @keyframes nameShimmer {
+      0%       { background-position: 100% 0; }
+      60%, 100% { background-position: 0% 0; }
+    }
+
+    .invite-couple-line.invite-amp {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(22px, 5.5vw, 28px);
+      line-height: 1;
+      margin: 2px 0;
+      background: none;
+      animation: none;
+      color: var(--gold-foil);
+      -webkit-text-fill-color: var(--gold-foil);
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    .invite-date {
+      font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 500;
+      letter-spacing: 0.28em; text-indent: 0.28em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold-bright); margin-top: 14px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    .invite-date::before, .invite-date::after {
+      content: ""; display: inline-block; width: 14px; height: 1px;
+      background: var(--gold-foil); opacity: 0.85;
+    }
+
+    .invite-time {
+      font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 400;
+      letter-spacing: 0.2em; text-indent: 0.2em; text-transform: uppercase;
+      display: block; color: var(--gold-light); opacity: 0.9; margin-top: 5px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ================= MAIN STATIONERY CARD ================= */
+    .card {
+      background: linear-gradient(135deg, var(--burgundy-black) 0%, var(--wine-dk) 50%, var(--burgundy-black) 100%);
+      border-radius: 0 0 27px 27px;
+      position: relative; overflow: hidden;
+      color: #ffffff;
+    }
+
+    /* Classic Stationery Inset Hairline */
+    .card::after {
+      content: ""; position: absolute; inset: 12px;
+      border: 1px solid rgba(200,212,230, 0.35);
+      border-radius: 18px; pointer-events: none; z-index: 1;
+    }
+
+    /* ================= HEARTBEAT DIVIDERS ================= */
+    .heart-rule {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin: 0 auto 16px;
+    }
+    .heart-rule span {
+      width: 44px; height: 1px; background: var(--gold-grad);
+    }
+    .heart-rule i, .beat-heart {
+      font-style: normal; display: inline-block; line-height: 1;
+      color: var(--gold-foil); font-size: 14px;
+      text-shadow: 0 0 10px rgba(200,212,230, 0.45);
+      animation: heartbeat 1.6s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes heartbeat {
+      0%, 45%, 100% { transform: scale(1); }
+      12%           { transform: scale(1.3); }
+      22%           { transform: scale(0.95); }
+      32%           { transform: scale(1.2); }
+    }
+
+    /* ================= HEADER ================= */
+    .card-header {
+      padding: 48px 50px 16px; text-align: center;
+      position: relative; z-index: 2;
+    }
+
+    .header-title {
+      font-family: 'Cinzel', serif;
+      font-size: 26px; font-weight: 600;
+      letter-spacing: 0.42em; text-indent: 0.42em;
+      color: #ffffff; display: block;
+      margin-bottom: 12px;
+    }
+
+    .header-divider {
+      width: 42px; height: 1px;
+      background: var(--gold-grad);
+      margin: 0 auto 16px;
+    }
+
+    .header-subtitle {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 17.5px; font-weight: 400;
+      color: rgba(255, 255, 255, 0.9); line-height: 1.7;
+      max-width: 380px; margin: 0 auto;
+    }
+
+    /* ================= FORM BODY ================= */
+    .form-body {
+      padding: 24px 50px 0;
+      position: relative; z-index: 2;
+    }
+
+    .field-group { margin-bottom: 26px; }
+
+    .field-label {
+      display: block; font-family: 'Cinzel', serif;
+      font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: #ffffff; margin-bottom: 10px;
+    }
+
+    .field-input {
+      width: 100%; padding: 13px 4px; background: transparent; border: none;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.3); color: #ffffff;
+      font-family: 'Montserrat', sans-serif; font-size: 14.5px; font-weight: 400;
+      letter-spacing: 0.03em;
+      transition: var(--ease-luxe) 0.35s; outline: none;
+      -webkit-appearance: none; appearance: none;
+    }
+
+    .field-input::placeholder {
+      font-size: 11.5px; color: rgba(255, 255, 255, 0.55); font-weight: 300; letter-spacing: 0.02em;
+    }
+
+    .field-input:focus {
+      border-bottom-color: var(--gold-foil);
+      box-shadow: 0 8px 16px -8px rgba(200,212,230, 0.35);
+    }
+
+    .field-input:disabled { -webkit-text-fill-color: #ffffff; }
+
+    .field-input:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    textarea.field-input {
+      resize: vertical; min-height: 85px; line-height: 1.65;
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16.5px;
+      border: 1px solid rgba(200,212,230, 0.4); border-radius: 8px;
+      padding: 14px 16px; background: rgba(255, 255, 255, 0.06);
+      margin-top: 6px;
+    }
+    textarea.field-input:focus {
+      border-color: var(--gold-foil);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Live Search Status */
+    .status-bar {
+      display: flex; align-items: center; gap: 9px;
+      padding: 10px 4px 4px; font-size: 12px; font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+      transition: var(--ease-luxe) 0.3s; min-height: 28px; color: rgba(255, 255, 255, 0.7);
+    }
+
+    .status-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      flex-shrink: 0; transition: var(--ease-luxe) 0.3s;
+    }
+
+    .status-bar.ready .status-dot { background: rgba(200,212,230, 0.5); }
+    .status-bar.searching { color: var(--gold-light); }
+    .status-bar.searching .status-dot { background: var(--gold-foil); box-shadow: 0 0 8px var(--gold-foil); }
+    .status-bar.found { color: #ffffff; font-weight: 500; }
+    .status-bar.found .status-dot { background: var(--gold-foil); }
+    .status-bar.not-found { color: #ffb4a8; }
+    .status-bar.not-found .status-dot { background: #ff8f7f; }
+    .status-bar.error { color: var(--gold-light); }
+    .status-bar.error .status-dot { background: var(--gold-foil); }
+    .status-bar.duplicate { color: var(--gold-light); }
+    .status-bar.duplicate .status-dot { background: var(--gold-foil); }
+
+    .status-bar.suggest { color: var(--gold-light); }
+    .status-bar.suggest .status-dot { background: var(--gold-foil); box-shadow: 0 0 8px var(--gold-foil); }
+
+    /* "Did you mean…?" suggestions */
+    .suggest-box { display: none; flex-direction: column; gap: 8px; margin-top: 8px; }
+    .suggest-box.visible { display: flex; animation: suggestIn .45s var(--ease-luxe) both; }
+    @keyframes suggestIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .suggest-btn {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      width: 100%; min-height: 48px; padding: 10px 16px; text-align: left; cursor: pointer;
+      background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(245, 169, 195, 0.4); border-radius: 10px;
+      font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; color: #ffffff;
+      transition: background .3s ease, border-color .3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .suggest-btn:hover { background: rgba(245, 169, 195, 0.14); border-color: var(--gold-foil); }
+    .suggest-btn:focus-visible { outline: 2px solid var(--gold-foil); outline-offset: 2px; }
+    .suggest-name { word-break: break-word; }
+    .suggest-go {
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px;
+      color: var(--gold-foil); white-space: nowrap; flex-shrink: 0;
+    }
+    @media (max-width: 390px) { .suggest-go { display: none; } }
+
+    /* ================= SEATING PLAQUE ================= */
+    .seat-panel {
+      background: linear-gradient(135deg, var(--wine-noir) 0%, var(--wine-dk) 50%, var(--wine-noir) 100%);
+      padding: 30px 40px 24px; text-align: center;
+      position: relative; z-index: 2; margin-top: 20px;
+      border-top: 1px solid var(--gold-dark);
+      border-bottom: 1px solid var(--gold-dark);
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    /* Shining sweep across the plaque */
+    .seat-panel::after {
+      content: ""; position: absolute; top: 0; bottom: 0; left: -60%;
+      width: 45%; pointer-events: none;
+      background: linear-gradient(105deg, transparent 0%, rgba(238,244,252, 0.16) 50%, transparent 100%);
+      transform: translateX(0) skewX(-18deg);
+      will-change: transform;
+      animation: plaqueSheen 5.5s ease-in-out infinite;
+    }
+
+    @keyframes plaqueSheen {
+      0%       { transform: translateX(0) skewX(-18deg); }
+      55%, 100% { transform: translateX(420%) skewX(-18deg); }
+    }
+
+    .seat-panel-label {
+      font-family: 'Cinzel', serif; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.36em; text-indent: 0.36em; text-transform: uppercase;
+      color: var(--gold-foil); margin-bottom: 8px;
+    }
+
+    .seat-number {
+      font-family: 'Cinzel', serif; font-weight: 500;
+      font-size: clamp(52px, 13vw, 68px); line-height: 1;
+      background: linear-gradient(120deg, #8fa3c0 0%, #eef4fc 25%, #5f7396 50%, #eef4fc 75%, #8fa3c0 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+      animation: goldShine 4s linear infinite;
+    }
+
+    @keyframes goldShine {
+      0%   { background-position: 0% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .seat-sublabel {
+      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 300;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--paper-cream); margin-top: 6px; opacity: 0.85;
+    }
+
+    /* ================= GUEST LIST & TOGGLE ================= */
+    .guest-section {
+      padding: 0 50px; margin-top: 28px;
+      position: relative; z-index: 2;
+    }
+
+    .guest-field-row {
+      display: flex; align-items: flex-end; gap: 14px;
+      overflow: hidden; max-height: 0; opacity: 0;
+      transition: max-height 0.45s var(--ease-luxe), opacity 0.35s ease, margin 0.35s ease;
+      margin-bottom: 0; padding-bottom: 4px;
+    }
+
+    .guest-field-row.show {
+      max-height: 80px; opacity: 1; margin-bottom: 14px;
+    }
+
+    .guest-num {
+      font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600;
+      color: var(--gold-mid); min-width: 22px; text-align: right;
+      flex-shrink: 0; padding-bottom: 12px; opacity: 0.9;
+    }
+
+    .guest-field-row.not-attending .field-input {
+      text-decoration: line-through; opacity: 0.45; color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Marquee for long guest names (mobile only, toggled by JS) */
+    .guest-input-wrap { position: relative; flex: 1; min-width: 0; }
+
+    .name-marquee {
+      display: none; position: absolute; left: 0; right: 0; top: 0; bottom: 1.5px;
+      padding: 13px 4px; overflow: hidden; white-space: nowrap; pointer-events: none;
+      font-family: 'Montserrat', sans-serif; font-size: 14.5px; font-weight: 400;
+      letter-spacing: 0.03em; line-height: normal; color: #ffffff;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 14px), transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 14px), transparent 100%);
+    }
+
+    .name-marquee-track {
+      display: inline-block; white-space: nowrap;
+      will-change: transform;
+      animation: nameMarquee var(--mq-dur, 10s) linear infinite;
+    }
+
+    .name-marquee-track span { display: inline-block; padding-right: 48px; }
+
+    @keyframes nameMarquee {
+      0%, 12%  { transform: translateX(0); }
+      100%     { transform: translateX(-50%); }
+    }
+
+    .guest-input-wrap.marquee-on .name-marquee { display: block; }
+    .guest-input-wrap.marquee-on .field-input {
+      color: transparent; -webkit-text-fill-color: transparent;
+    }
+    .guest-input-wrap.marquee-on .name-marquee { opacity: 0.6; }
+    .guest-input-wrap.marquee-on .field-input:not(:disabled) ~ .name-marquee { opacity: 1; }
+
+    .guest-field-row.not-attending .guest-input-wrap.marquee-on .field-input ~ .name-marquee {
+      text-decoration: line-through; opacity: 0.45; color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Couture Toggle Control */
+    .attend-toggle {
+      display: flex; align-items: center; gap: 9px;
+      flex-shrink: 0; cursor: pointer; padding-bottom: 11px; user-select: none;
+    }
+
+    .attend-toggle input[type="checkbox"] { display: none; }
+
+    .toggle-track {
+      width: 40px; height: 20px; border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(200,212,230, 0.4);
+      position: relative; transition: var(--ease-luxe) 0.35s; flex-shrink: 0;
+    }
+
+    .toggle-thumb {
+      position: absolute; top: 2px; left: 2px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+      transition: var(--ease-luxe) 0.35s;
+    }
+
+    .attend-toggle input:checked + .toggle-track {
+      background: var(--wine-noir);
+      border-color: var(--gold-mid);
+    }
+
+    .attend-toggle input:checked + .toggle-track .toggle-thumb {
+      transform: translateX(20px);
+      background: var(--gold-light);
+    }
+
+    .toggle-label {
+      font-family: 'Montserrat', sans-serif; font-size: 9.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6); white-space: nowrap; min-width: 82px;
+      transition: color 0.3s ease;
+    }
+
+    .attend-toggle input:checked ~ .toggle-label {
+      color: #ffffff;
+    }
+
+    /* ================= MESSAGE & SUBMIT ================= */
+    .message-section {
+      padding: 0 50px; margin-top: 14px;
+      position: relative; z-index: 2;
+    }
+
+    .btn-wrap {
+      padding: 28px 50px 0;
+      position: relative; z-index: 2;
+    }
+
+    .btn-submit {
+      display: block; width: 100%; padding: 18px 28px;
+      background: linear-gradient(135deg, var(--wine-noir) 0%, var(--wine-dk) 100%);
+      border: 1px solid var(--gold-mid);
+      cursor: pointer; border-radius: 8px;
+      font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.36em; text-transform: uppercase; text-indent: 0.36em;
+      color: var(--gold-bright); transition: var(--ease-luxe) 0.4s;
+      box-shadow: 0 10px 30px -8px rgba(11,18,64, 0.55);
+      position: relative; overflow: hidden;
+    }
+
+    .btn-submit::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+      transition: 0.8s ease;
+    }
+
+    .btn-submit:hover:not(:disabled)::after {
+      transform: translateX(100%);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: linear-gradient(135deg, var(--wine-dk) 0%, var(--wine-bright) 100%);
+      border-color: var(--gold-light);
+      box-shadow: 0 14px 36px -6px rgba(25,25,112, 0.6);
+      transform: translateY(-1.5px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.35; cursor: not-allowed; border-color: transparent;
+      box-shadow: none; transform: none;
+    }
+
+    .btn-spinner {
+      display: none; width: 13px; height: 13px;
+      border: 1.5px solid rgba(223,232,245, 0.3);
+      border-top-color: var(--gold-light);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+      margin-right: 10px; vertical-align: middle;
+    }
+    .btn-submit.loading .btn-spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ================= DEADLINE & NOTICES ================= */
+    .deadline-notice {
+      padding: 0 50px; margin-top: 32px; text-align: center;
+      position: relative; z-index: 2;
+    }
+
+    .deadline-box {
+      display: inline-block; padding: 14px 28px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(200,212,230, 0.4);
+    }
+
+    .deadline-box p {
+      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85); line-height: 1.7;
+    }
+
+    .deadline-box p strong {
+      color: var(--gold-foil); font-weight: 600;
+      letter-spacing: 0.16em; font-size: 12px;
+    }
+
+    .note-section {
+      padding: 30px 50px 48px; text-align: center;
+      position: relative; z-index: 2;
+    }
+
+    .note-divider {
+      width: 44px; height: 1px;
+      background: var(--gold-grad); margin: 0 auto 24px;
+    }
+
+    .note-section .heart-rule { margin-bottom: 24px; }
+
+    .note-section p {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 16.5px; font-weight: 400;
+      line-height: 1.85; color: rgba(255, 255, 255, 0.88); margin-bottom: 12px;
+    }
+
+    .note-section p:last-child { margin-bottom: 0; }
+    .note-section p strong { color: #ffffff; font-weight: 600; font-style: normal; }
+
+    .sign-off {
+      font-family: 'Pinyon Script', cursive; font-weight: 400;
+      font-size: clamp(30px, 8.4vw, 44px); display: inline-block; margin-top: 18px; text-wrap: balance;
+      line-height: 1.15;
+      padding: 0.1em 0.4em 0.22em;
+      background: linear-gradient(110deg, #ffffff 0%, #ffffff 34%, #eef4fc 44%, #c8d4e6 50%, #eef4fc 56%, #ffffff 66%, #dfe8f5 100%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+      animation: nameShimmer 6s ease-in-out infinite;
+    }
+
+    .sign-off.sign-off-co {
+      font-family: 'Cinzel', serif; font-weight: 600; white-space: normal;
+      font-size: clamp(14px, 3.8vw, 18px); letter-spacing: 0.22em; text-indent: 0.22em; line-height: 1.5;
+    }
+    .sign-off-date {
+      font-family: 'Cinzel', serif; font-size: 9.5px; font-weight: 600;
+      letter-spacing: 0.34em; text-indent: 0.34em;
+      color: var(--gold-foil); display: block; margin-top: 6px;
+    }
+
+    .page-footer {
+      margin-top: 30px; text-align: center; position: relative; z-index: 3;
+    }
+
+    .page-footer p {
+      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 400;
+      color: rgba(223,232,245, 0.45); letter-spacing: 0.32em; text-transform: uppercase;
+    }
+
+    .page-footer .beat-heart {
+      display: block; margin: 0 auto 8px; font-size: 13px;
+      color: var(--gold-foil);
+      text-shadow: 0 0 10px rgba(200,212,230, 0.5);
+    }
+
+    /* ================= MODAL ================= */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(3, 6, 16, 0.85);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 500; padding: 24px; opacity: 0; pointer-events: none;
+      transition: opacity 0.4s var(--ease-luxe);
+    }
+
+    .modal-overlay.active {
+      opacity: 1; pointer-events: all;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    }
+
+    .modal {
+      width: 100%; max-width: 470px;
+      transform: scale(0.94) translateY(18px);
+      transition: transform 0.45s var(--ease-luxe);
+      background: var(--card-white);
+      border: 1px solid var(--gold-mid);
+      border-radius: 20px; overflow: hidden;
+      max-height: 90vh; display: flex; flex-direction: column;
+      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-overlay.active .modal { transform: scale(1) translateY(0); }
+
+    .modal-accent {
+      height: 4px;
+      background: var(--gold-grad); flex-shrink: 0;
+    }
+
+    .modal-scroll { overflow-y: auto; }
+
+    .modal-header {
+      padding: 36px 30px 20px; text-align: center;
+      border-bottom: 1px solid var(--border-fine);
+      background: radial-gradient(circle at 50% 0%, var(--paper-cream) 0%, #ffffff 80%);
+    }
+
+    .modal-icon {
+      display: block; font-size: 24px; margin: 0 auto 6px;
+    }
+
+    .modal-names {
+      font-family: 'Pinyon Script', cursive; font-weight: 400;
+      font-size: 42px; color: var(--wine-noir); line-height: 1.1;
+    }
+
+    .modal-tagline {
+      font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600;
+      letter-spacing: 0.32em; color: var(--gold-mid); margin-top: 6px;
+      display: block; text-transform: uppercase;
+    }
+
+    .modal-body { padding: 26px 32px 34px; text-align: center; }
+
+    .modal-title {
+      font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.34em; text-transform: uppercase;
+      color: var(--wine-noir); margin-bottom: 10px;
+    }
+
+    .modal-message {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 16.5px; font-weight: 400; color: var(--ink-muted);
+      line-height: 1.7; margin-bottom: 24px;
+    }
+
+    .summary-card {
+      background: var(--paper-cream); border: 1px solid var(--border-fine);
+      border-radius: 10px; padding: 20px 22px; text-align: left; margin-bottom: 24px;
+    }
+
+    .summary-row {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; padding: 11px 0;
+      border-bottom: 1px solid rgba(143,163,192, 0.16);
+    }
+    .summary-row:last-child { border-bottom: none; }
+
+    .summary-label {
+      font-family: 'Cinzel', serif; font-size: 9.5px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-dark);
+      flex-shrink: 0;
+    }
+
+    .summary-value {
+      font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 500;
+      color: var(--ink-primary); text-align: right;
+    }
+
+    .summary-badge {
+      display: inline-block; padding: 4px 10px; border-radius: 4px;
+      font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .summary-badge.accept { background: rgba(25,25,112, 0.1); color: var(--wine); border: 1px solid rgba(25,25,112, 0.22); }
+    .summary-badge.decline { background: rgba(163, 59, 48, 0.1); color: #a33b30; border: 1px solid rgba(163, 59, 48, 0.22); }
+
+    .summary-names { list-style: none; text-align: right; }
+    .summary-names li { font-size: 12.5px; color: var(--ink-primary); line-height: 1.6; }
+
+    .summary-note {
+      text-align: left; font-family: 'Cormorant Garamond', serif; font-style: italic;
+      color: var(--ink-muted); font-size: 14.5px; line-height: 1.6;
+    }
+
+    .modal-actions { display: flex; gap: 10px; }
+
+    .btn-modal-close {
+      display: inline-flex; align-items: center; justify-content: center;
+      flex: 1; padding: 15px 24px; border-radius: 8px;
+      border: 1px solid var(--gold-mid); cursor: pointer;
+      font-family: 'Cinzel', serif; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      transition: var(--ease-luxe) 0.35s;
+      background: var(--wine-noir); color: var(--gold-bright);
+      text-decoration: none; text-align: center;
+    }
+    .btn-modal-close:hover {
+      background: var(--gold-mid); border-color: var(--gold-light);
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 580px) {
+      .invite-banner { min-height: 270px; }
+      .card-header, .form-body, .btn-wrap,
+      .note-section, .seat-panel, .guest-section, .deadline-notice, .message-section {
+        padding-left: 24px; padding-right: 24px;
+      }
+      .modal-header, .modal-body { padding-left: 20px; padding-right: 20px; }
+      .invite-text { padding: 38px 18px 34px; }
+    }
+
+    /* Performance: phones & tablets */
+    @media (max-width: 768px) {
+      body {
+        background-image:
+          radial-gradient(ellipse 70% 45% at 50% 0%, rgba(25,25,112, 0.45) 0%, transparent 75%),
+          radial-gradient(circle 800px at 50% 100%, rgba(143,163,192, 0.12) 0%, transparent 60%);
+      }
+      .card-outer-frame { box-shadow: 0 20px 50px -16px rgba(0, 0, 0, 0.85); }
+      .card-outer-frame::before { animation: none; opacity: 0; }
+      .invite-couple-line, .seat-number, .sign-off { filter: none; text-shadow: none; }
+      .invite-couple-line.invite-amp { filter: none; }
+      .twinkle { animation-duration: calc(var(--t) * 1.4); }
+    }
+
+    @media (max-width: 390px) {
+      .invite-banner { min-height: 250px; }
+      .card-header, .form-body, .btn-wrap,
+      .note-section, .seat-panel, .guest-section, .deadline-notice, .message-section {
+        padding-left: 18px; padding-right: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .twinkle-layer, .banner-sparkles { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DECORATIVE LAYER (click-through) -->
+  <div class="twinkle-layer" id="twinkleLayer" aria-hidden="true"></div>
+
+  <div class="card-wrap">
+    <div class="card-outer-frame">
+
+      <!-- INVITATION BANNER -->
+      <div class="invite-banner">
+        <div class="invite-text">
+<img class="invite-logo" src="/logo.webp" alt="Island Hills Land Corporation" width="720" height="203" />
+
+
+          <span class="invite-eyebrow">Christmas Party &amp; Annual Awards Night</span>
+          <h1 class="invite-title"><img src="/title.webp" alt="A Night in Paris" width="1200" height="569" /></h1>
+          <span class="invite-date">Christmas 2026</span>
+        </div>
+        <div class="banner-sparkles" id="bannerSparkles" aria-hidden="true"></div>
+      </div>
+
+      <div class="card">
+
+        <!-- HEADER -->
+        <div class="card-header">
+          <span class="header-title">RSVP</span>
+          <div class="heart-rule" aria-hidden="true"><span></span><svg class="rule-diamond" aria-hidden="true" viewBox="0 0 12 12"><path d="M6 0.5 L11.5 6 L6 11.5 L0.5 6 Z" fill="#c8d4e6"/><circle cx="6" cy="6" r="1.3" fill="#ffffff"/></svg><span></span></div>
+          <p class="header-subtitle">
+            Join us as we celebrate the season and honour this year&#8217;s achievers.<br>
+            Kindly confirm your attendance by completing the form below.
+          </p>
+        </div>
+
+        <!-- FORM -->
+        <div class="form-body">
+          <div class="field-group">
+            <label class="field-label" for="guestSearch">Guest Full Name</label>
+            <input type="text" id="guestSearch" class="field-input"
+              placeholder="Enter your First and Last Name."
+              autocomplete="off" spellcheck="false" />
+            <div class="status-bar ready" id="statusBar">
+              <div class="status-dot"></div>
+              <span id="statusText">Enter your name above to continue</span>
+            </div>
+            <div class="suggest-box" id="suggestBox" role="list"></div>
+          </div>
+        </div>
+
+        <!-- SEAT + GUESTS -->
+        <div id="seatPanel" style="display:none;">
+          <div class="seat-panel">
+            <div class="seat-panel-label">Reserved in your honour</div>
+            <div class="seat-number" id="seatNumber">&#8212;</div>
+            <div class="seat-sublabel">seats reserved under your name</div>
+          </div>
+          <div class="guest-section">
+            <div class="field-group" style="margin-top:22px;">
+              <label class="field-label">Confirm Attendance</label>
+              <p id="guestHint" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:rgba(255,255,255,0.8); margin:-4px 0 16px;">Toggle each name below to mark who will be attending.</p>
+              <div id="guestFields"></div>
+            </div>
+          </div>
+
+          <!-- MESSAGE -->
+          <div class="message-section">
+            <div class="field-group" style="margin-top:6px; margin-bottom:8px;">
+              <label class="field-label" for="messageToCouple">Message to the Organizers</label>
+              <textarea id="messageToCouple" class="field-input" placeholder="Share a greeting or message (optional)"></textarea>
+            </div>
+          </div>
+
+          <div class="btn-wrap">
+            <button class="btn-submit" id="submitBtn" onclick="submitRSVP()" disabled>
+              <span class="btn-spinner"></span>
+              <span id="submitBtnText">Confirm Response</span>
+            </button>
+          </div>
+        </div>
+        <br>
+        <!-- RSVP DEADLINE NOTICE -->
+        <div class="deadline-notice">
+          <div class="deadline-box">
+            <p>Kindly submit your RSVP <strong><br>as early as possible</strong></p>
+          </div>
+        </div>
+        <br>
+        <!-- NOTES -->
+        <div class="note-section">
+          <div class="heart-rule" aria-hidden="true"><span></span><svg class="rule-diamond" aria-hidden="true" viewBox="0 0 12 12"><path d="M6 0.5 L11.5 6 L6 11.5 L0.5 6 Z" fill="#c8d4e6"/><circle cx="6" cy="6" r="1.3" fill="#ffffff"/></svg><span></span></div>
+          <p>Only guests with <strong>CONFIRMED RSVPs</strong> will be accommodated. Seats are reserved for the names that appear on the invitation.</p>
+          <p>This celebration is exclusive to <strong>Island Hills Land Corporation</strong> employees and invited guests.<br>Thank you for your kind understanding.</p>
+          <span class="sign-off sign-off-co">Island Hills Land Corporation</span>
+          <span class="sign-off-date">CHRISTMAS PARTY &amp; ANNUAL AWARDS NIGHT &middot; 2026</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer"><p>merry christmas &amp; cheers to a great year</p></div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modalBox">
+      <div class="modal-accent"></div>
+      <div class="modal-scroll">
+        <div class="modal-header">
+          <span class="modal-icon beat-heart" aria-hidden="true">&#10022;</span>
+          <div class="modal-names">A Night in Paris</div>
+          <span class="modal-tagline">Island Hills &middot; Christmas Party 2026</span>
+        </div>
+        <div class="modal-body">
+          <h2 class="modal-title">Thank You</h2>
+          <p class="modal-message" id="modalMessage">
+            Your response has been received.<br>
+            We are excited to celebrate with you.
+          </p>
+
+          <div class="summary-card" id="summaryCard">
+            <!-- populated by JS -->
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-modal-close" onclick="closeModal()">Back to RSVP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ================================================================
+       DECORATIVE ANIMATIONS — TWINKLES (DESIGN ONLY)
+    ================================================================ */
+    (function(){
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+
+      function rand(a, b){ return a + Math.random() * (b - a); }
+
+      // Background twinkles (behind the card)
+      var twinkleLayer = document.getElementById('twinkleLayer');
+      var isMobile = window.innerWidth <= 768;
+      var bgCount = isMobile ? 12 : 26, bannerCount = isMobile ? 5 : 9;
+      for (var t = 0; t < bgCount; t++) {
+        var s = document.createElement('span');
+        s.className = 'twinkle';
+        s.style.left = rand(0, 100) + '%';
+        s.style.top = rand(0, 100) + '%';
+        s.style.setProperty('--s', rand(6, 14).toFixed(1) + 'px');
+        s.style.setProperty('--t', rand(2.4, 4.6).toFixed(2) + 's');
+        s.style.setProperty('--d', (-rand(0, 4.6)).toFixed(2) + 's');
+        twinkleLayer.appendChild(s);
+      }
+
+      // Sparkles over the names in the banner
+      var bannerSparkles = document.getElementById('bannerSparkles');
+      for (var b = 0; b < bannerCount; b++) {
+        var sp = document.createElement('span');
+        sp.className = 'twinkle';
+        sp.style.left = rand(4, 96) + '%';
+        sp.style.top = rand(8, 90) + '%';
+        sp.style.setProperty('--s', rand(5, 11).toFixed(1) + 'px');
+        sp.style.setProperty('--t', rand(2, 3.8).toFixed(2) + 's');
+        sp.style.setProperty('--d', (-rand(0, 3.8)).toFixed(2) + 's');
+        bannerSparkles.appendChild(sp);
+      }
+    })();
+
+    /* ================================================================
+       RSVP FORM — Vercel + Neon (POST /api/rpc replaces google.script.run)
+    ================================================================ */
+    function rpc(fnName){
+      var args = Array.prototype.slice.call(arguments, 1);
+      return fetch('/api/rpc', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fn: fnName, args: args }) })
+        .then(function(res){
+          return res.json().catch(function(){ return null; }).then(function(data){
+            if (!res.ok) { var e = new Error((data && data.message) || ('HTTP ' + res.status)); e.setup = !!(data && data.setupError); throw e; }
+            return data;
+          });
+        });
+    }
+    var currentGuest=null, debounceTimer=null, MAX_GUESTS=20;
+    var searchInput=document.getElementById('guestSearch');
+    var statusBar=document.getElementById('statusBar');
+    var statusText=document.getElementById('statusText');
+    var seatPanel=document.getElementById('seatPanel');
+    var seatNumber=document.getElementById('seatNumber');
+    var submitBtn=document.getElementById('submitBtn');
+    var submitBtnTxt=document.getElementById('submitBtnText');
+    var messageToCouple=document.getElementById('messageToCouple');
+    var guestHint=document.getElementById('guestHint');
+    var suggestBox=document.getElementById('suggestBox');
+    var searchSeq=0;
+
+    function showSuggestions(list){
+      suggestBox.innerHTML='';
+      list.forEach(function(name){
+        var btn=document.createElement('button');
+        btn.type='button'; btn.className='suggest-btn'; btn.setAttribute('role','listitem');
+        btn.innerHTML='<span class="suggest-name">'+escapeHtml(name)+'</span><span class="suggest-go">This is me &rsaquo;</span>';
+        btn.addEventListener('click',function(){ pickSuggestion(name); });
+        suggestBox.appendChild(btn);
+      });
+      suggestBox.classList.add('visible');
+    }
+    function hideSuggestions(){ suggestBox.classList.remove('visible'); suggestBox.innerHTML=''; }
+    function pickSuggestion(name){
+      clearTimeout(debounceTimer);
+      searchInput.value=name; hideSuggestions(); hideRSVP();
+      setStatus('searching','Opening your invitation…');
+      doSearch(name);
+    }
+
+    function setStatus(t,m){ statusBar.className='status-bar '+t; statusText.textContent=m; }
+
+    function buildGuestFields(seat, mode, companions){
+      var wrap = document.getElementById('guestFields');
+      var html = '';
+      for (var i = 1; i <= seat; i++) {
+        var isMain = i === 1;
+        var prefill = isMain ? currentGuest.name : (companions[i-2] || '');
+        var locked = !isMain && mode === 'Fixed';
+        html += '<div class="guest-field-row show" id="guestRow' + i + '">' +
+          '<span class="guest-num">' + i + '.</span>' +
+          '<div class="guest-input-wrap"><input type="text" id="guest' + i + '" class="field-input" value="' + escapeHtml(prefill) + '" placeholder="' + (isMain ? 'Main Guest' : 'Guest ' + i) + '" ' + (isMain || locked ? 'disabled' : '') + ' /><span class="name-marquee" aria-hidden="true"><span class="name-marquee-track"></span></span></div>' +
+          '<label class="attend-toggle" title="Toggle attendance">' +
+            '<input type="checkbox" id="guestAttend' + i + '" checked onchange="toggleGuestAttendance(' + i + ')" />' +
+            '<span class="toggle-track"><span class="toggle-thumb"></span></span>' +
+            '<span class="toggle-label" id="guestAttendLabel' + i + '">Joyfully Accepts</span>' +
+          '</label>' +
+        '</div>';
+      }
+      wrap.innerHTML = html;
+      setupNameMarquees();
+      guestHint.textContent = mode === 'Fixed'
+        ? 'These names were reserved for your party — toggle who will be attending.'
+        : 'Confirm or edit each name, and toggle who will be attending.';
+    }
+
+    /* ---------- Marquee scroll for long names on mobile (design only) ---------- */
+    var mqCanvas = document.createElement('canvas').getContext('2d');
+    var mqMobile = window.matchMedia('(max-width: 580px)');
+    var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function refreshNameMarquee(inp){
+      var box = inp.parentNode;
+      if (!box || !box.classList.contains('guest-input-wrap')) return;
+      var track = box.querySelector('.name-marquee-track');
+      var text = inp.value;
+      box.classList.remove('marquee-on');
+      if (!text || !mqMobile.matches || mqReduce.matches || document.activeElement === inp) return;
+      var cs = getComputedStyle(inp);
+      mqCanvas.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      var textW = mqCanvas.measureText(text).width + text.length * parseFloat(cs.fontSize) * 0.03;
+      var avail = inp.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (textW <= avail) return;
+      track.innerHTML = '';
+      for (var k = 0; k < 2; k++) { var s = document.createElement('span'); s.textContent = text; track.appendChild(s); }
+      track.style.setProperty('--mq-dur', Math.max(7, (textW + 48) / 32).toFixed(1) + 's');
+      box.classList.add('marquee-on');
+    }
+
+    // Re-check whenever an input's width changes (panel shown, toggle label swaps, rotation)
+    var mqObserver = window.ResizeObserver ? new ResizeObserver(function(entries){
+      for (var k = 0; k < entries.length; k++) refreshNameMarquee(entries[k].target);
+    }) : null;
+
+    function setupNameMarquees(){
+      var inputs = document.querySelectorAll('#guestFields .guest-input-wrap .field-input');
+      for (var k = 0; k < inputs.length; k++) {
+        (function(inp){
+          if (!inp.dataset.mqBound) {
+            inp.dataset.mqBound = '1';
+            if (mqObserver) mqObserver.observe(inp);
+            inp.addEventListener('focus', function(){ inp.parentNode.classList.remove('marquee-on'); });
+            inp.addEventListener('blur', function(){ refreshNameMarquee(inp); });
+          }
+          refreshNameMarquee(inp);
+        })(inputs[k]);
+      }
+    }
+
+    var mqResizeTimer = null;
+    window.addEventListener('resize', function(){ clearTimeout(mqResizeTimer); mqResizeTimer = setTimeout(setupNameMarquees, 200); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setupNameMarquees);
+
+    function toggleGuestAttendance(i){
+      var cb=document.getElementById('guestAttend'+i);
+      var row=document.getElementById('guestRow'+i);
+      var lbl=document.getElementById('guestAttendLabel'+i);
+      if(!cb||!row) return;
+      if(cb.checked){ row.classList.remove('not-attending'); if(lbl) lbl.textContent='Joyfully Accepts'; }
+      else { row.classList.add('not-attending'); if(lbl) lbl.textContent='Regretfully Declines'; }
+    }
+
+    function showRSVP(d){
+      currentGuest=d; seatNumber.textContent=d.seat;
+      buildGuestFields(d.seat, d.mode, d.guests || []);
+      seatPanel.style.display='block';
+      messageToCouple.value='';
+      submitBtn.disabled=false;
+    }
+    function hideRSVP(){
+      seatPanel.style.display='none';
+      currentGuest=null; seatNumber.textContent='—';
+      document.getElementById('guestFields').innerHTML='';
+      messageToCouple.value='';
+      submitBtn.disabled=true;
+    }
+
+    searchInput.addEventListener('input',function(){
+      var v=this.value.trim(); clearTimeout(debounceTimer); hideRSVP(); hideSuggestions(); searchSeq++;
+      if(!v){ setStatus('ready','Enter your name above to continue'); return; }
+      setStatus('searching','Searching guest registry…');
+      debounceTimer=setTimeout(function(){ doSearch(v); },500);
+    });
+
+    function doSearch(name){
+      var seq=++searchSeq;
+      rpc('getGuestData', name)
+        .then(function(res){ if(seq===searchSeq) handleGuestResult(res); })
+        .catch(function(err){
+          if(seq!==searchSeq) return;
+          console.error('RSVP:',err);
+          setStatus('error', err.setup ? 'The RSVP is still being set up. Please try again later.' : 'Server error. Please refresh and try again.');
+        });
+    }
+
+    function lockRsvpClosed(){
+      hideRSVP();
+      searchInput.disabled = true;
+      searchInput.placeholder = 'RSVP is currently closed';
+      setStatus('duplicate','RSVP submissions are currently closed. Please reach out to the event organizers.');
+    }
+
+    function handleGuestResult(result){
+      if(!result){ setStatus('not-found','No response from server. Please try again.'); hideRSVP(); return; }
+      if(result.rsvpClosed){ lockRsvpClosed(); return; }
+      if(!result.found && result.suggestions && result.suggestions.length){
+        setStatus('suggest', result.suggestions.length===1 ? 'Did you mean this name?' : 'Did you mean one of these names?');
+        hideRSVP(); showSuggestions(result.suggestions); return;
+      }
+      if(!result.found){ setStatus('not-found','Name not found in our guest registry. Please type your first and last name.'); hideRSVP(); return; }
+      if(result.alreadySubmitted){ setStatus('duplicate','RSVP already received — thank you, '+result.name+'!'); hideRSVP(); return; }
+      setStatus('found','Invitation found — welcome, '+result.name+'.'); showRSVP(result);
+    }
+
+    rpc('getRsvpStatus').then(function(status){ if (status && status.active === false) lockRsvpClosed(); }).catch(function(){});
+
+    function submitRSVP(){
+      if(!currentGuest) return;
+
+      var mainCb = document.getElementById('guestAttend1');
+      var mainStatus = (mainCb && mainCb.checked) ? 'Joyfully Accepts' : 'Regretfully Declines';
+
+      var payload = {
+        name: currentGuest.name,
+        mainStatus: mainStatus,
+        message: messageToCouple.value.trim()
+      };
+      for (var g = 2; g <= currentGuest.seat; g++) {
+        var inp = document.getElementById('guest' + g);
+        var cb = document.getElementById('guestAttend' + g);
+        var gName = inp ? inp.value.trim() : '';
+        payload['guest' + g] = gName;
+        payload['status' + g] = gName ? ((cb && cb.checked) ? 'Joyfully Accepts' : 'Regretfully Declines') : '';
+      }
+
+      submitBtn.disabled=true; submitBtn.classList.add('loading'); submitBtnTxt.textContent='Sending…';
+      rpc('submitForm', payload)
+        .then(function(res){
+          resetBtn();
+          if(res && res.success){ showModal(res.message, res.summary); }
+          else if (res && res.rsvpClosed) { lockRsvpClosed(); }
+          else { setStatus('duplicate', res ? res.message : 'Submission failed. Please try again.'); }
+        })
+        .catch(function(err){ console.error('RSVP submit:',err); resetBtn(); setStatus('error','Submission error. Please refresh and try again.'); });
+    }
+
+    function resetBtn(){ submitBtn.disabled=false; submitBtn.classList.remove('loading'); submitBtnTxt.textContent='Confirm Response'; }
+
+    function showModal(msg, summary){
+      document.getElementById('modalMessage').innerHTML = 'Your response has been received.<br>' + (msg || 'We are excited to celebrate with you.');
+      summary = summary || {};
+
+      var isAccept = summary.attendance === 'Joyfully Accepts';
+      var badge = '<span class="summary-badge ' + (isAccept?'accept':'decline') + '">' + (isAccept?'Joyfully Accepts':'Regretfully Declines') + '</span>';
+
+      var namesHtml = '';
+      if (summary.guestNames && summary.guestNames.length) {
+        namesHtml = '<ul class="summary-names">' + summary.guestNames.map(function(n){ return '<li>' + escapeHtml(n) + '</li>'; }).join('') + '</ul>';
+      } else {
+        namesHtml = '<span class="summary-value">—</span>';
+      }
+
+      var rows =
+        '<div class="summary-row"><span class="summary-label">Guest</span><span class="summary-value">' + escapeHtml(summary.name||'') + '</span></div>' +
+        '<div class="summary-row"><span class="summary-label">Response</span>' + badge + '</div>' +
+        '<div class="summary-row"><span class="summary-label">Attending</span><span class="summary-value">' + (summary.seatCount||0) + '</span></div>' +
+        '<div class="summary-row"><span class="summary-label">Guest Name(s)</span>' + namesHtml + '</div>';
+
+      if (summary.message) {
+        rows += '<div class="summary-row" style="flex-direction:column;align-items:flex-start;gap:6px;"><span class="summary-label">Message</span><p class="summary-note">"' + escapeHtml(summary.message) + '"</p></div>';
+      }
+
+      document.getElementById('summaryCard').innerHTML = rows;
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+    function escapeHtml(s){
+      return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function closeModal(){
+      document.getElementById('modalOverlay').classList.remove('active');
+      hideRSVP(); hideSuggestions(); searchSeq++;
+      searchInput.value='';
+      setStatus('ready','Enter your name above to continue');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.getElementById('modalOverlay').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+  </script>
+</body>
+</html>
