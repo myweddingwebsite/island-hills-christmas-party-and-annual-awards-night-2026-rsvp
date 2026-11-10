@@ -1,6 +1,6 @@
 # Island Hills Land Corporation — Christmas Party & Annual Awards Night 2026 RSVP (Vercel + Neon)
 
-"A Night in Paris" · Midnight Blue, Silver & Ice
+"A Night in Paris" · Midnight Blue, Silver & Ice · **December 11, 2026**
 Made by Love, Anne (@loveanne.ph) & Nexcellent Solutions.
 
 | Page | URL |
